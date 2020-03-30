@@ -1,0 +1,36 @@
+<html>
+<head>
+	<script type="text/javascript">
+		alert("Welcome to my Page"); /*Assignment 3*/
+	</script>
+
+ </head>
+<body bgcolor="black">
+	<table>
+		<tr>
+			<td bgcolor=maroon height=40>
+				<font color=white><div align=left><pre>Samarth Galchar D19CE167</pre></div>
+			</td>
+		</tr>
+		<tr>
+			<td width=1500 height= 100>
+					<center><font color=white><h1>A SAD LIFE</h1></font></center>
+			</td>
+		</tr>
+	</table>
+	<table>	
+		<tr>
+			<td bgcolor=lightgray width=200 height=410>
+				<ul>
+					<li><h2>Expectation</h2>
+					<p>Something about<br> myself, don't laugh.</p>
+			</td>
+			<td bgcolor=maroon width=1300 height="540">
+				<font color=white><center><h2>Inception</h2></font>
+				<img src="https://lh3.googleusercontent.com/proxy/g1IbODYZkbDn_5pra6cRX-x7DIpgtCzBLNa_8WkUIoaermpe8N7C_ZrzWpXxOuKt16muSHtPLFPq9vr_JpfskkHeFTtaUxdQ6ploevBMCVk" align="center" height="150" width="250">
+				<br>
+
+				<p>Basically, almost all of my childhood (or even the life I've lead till now) has been a total blank, to strive forward without knowing what we are supposed to chase after, to work hard not knowing its consequences, to masquerade amongst and with others to hide your true self, blend in, be a part of society, be upto people's expectations, be obedient, be whatever the hell they want....was not for me. I choose to ruin my life the otherway, get addicted...get addicted to something like a video game, game called dota. I started playing that competitive moba in my 7th grade and each and every moment after that have been completely blank, fast forward to recent date, i find my self failing, self loathing and in a pit of misery. But the fact that I know and I acknowledge it is a progress itself. I've left gaming for competitive purpose and now I look forward to a reason good enough for the justification of me leaving my sole addiction, meaning of life. </p>
+
+	</body>
+</html>
