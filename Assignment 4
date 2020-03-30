@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		th{
+			text-align: center;
+			padding: 10px;
+
+		}
+		td{
+			padding: 5px;
+		}
+		input{
+			width: 100%;
+		}
+	</style>
+	<script type="text/javascript">
+		function validateForm() {
+  			var x = document.forms["myForm"]["name"].value;
+  			if (x == "") {
+    		alert("Name must be filled out");
+    		return false;
+  			}
+  			var y = document.forms["myForm"]["email"].value;
+  			if (y == "") {
+    		alert("E-mail must be filled out");
+    		return false;
+  			}
+		} 
+	</script>
+	<title>Form</title>
+</head>
+<body>
+	<center>
+	<form name="myForm" onsubmit="return validateForm()" method="post">
+		<table border="1px">
+			<tr>
+				<th>Name : </th>
+				<td><input type="text" name="name" placeholder="Enter your name"></td>
+			</tr>
+			<tr>
+				<th>E-mail : </th>
+				<td><input type="text" name="email" placeholder="Enter your E-mail"></td>
+			</tr>
+			<tr>
+				<th>Gender :</th>
+				<td>
+					<table>
+						<tr>
+							<td>Male</td>
+							<td><input type="radio" name="Gender" value="Male"></td>
+							<td>Female</td>
+							<td><input type="radio" name="Gender" value="Female"></td>
+						</tr>
+					</table>
+					</td>
+			</tr>
+			<tr>
+				<th>Phone No :</th>
+				<td><input type="text" name="phone" placeholder="Enter your phone no"></td>
+			</tr>
+			<tr>
+				<th>Pincode :</th>
+				<td><input type="text" name="pin" placeholder="Enter your pin code"></td>
+			</tr>
+			<tr>
+				<th>Address :</th>
+				<td><textarea rows="3" cols="20" placeholder="Enter your address"></textarea></td>
+			</tr>
+			<tr>
+				<th colspan=2><button type="submit">Submit</button></th>
+			</tr>
+		</table>
+	</form>
+</center>
+	
+</body>
+</html>
