@@ -1,0 +1,135 @@
+<?php
+
+$con = mysqli_connect("localhost","root","","assignment");
+if(!$con){
+echo "Database Connection Failed";
+}
+if(isset($_POST['submitbtn'])){
+
+$name=$email=$phone=$gender=$fprof='';
+
+$fname = $_POST['name'];
+$femail = $_POST['email'];
+$fphone = $_POST['phone'];
+$fgender = $_POST['gender'];
+$fprof = $_POST['profession'];
+
+$sql = "INSERT INTO tbluser (name,email,phone,gender,profession) VALUES ('$fname','$femail','$fphone','$fgender','$fprof')";
+$result = mysqli_query($con,$sql);
+header("Refresh:0");
+if($result){
+		echo "<script>alert(\"Registration Successfull\");</script>";	
+}
+else{
+		echo "<script>alert(\"Registration Failed\");</script>";
+}
+
+}
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registraion of National Workshop on Web Technologies</title>
+	<link rel="stylesheet" href="assingment5.css">
+	<link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet"> 
+</head>
+<body>
+	
+	<div>
+		<div class="cover">
+			<h1 align="center">National Workshop on Web Technologies</h1>
+			<p></p>
+		</div>
+
+		<div>
+			<h3><strong>Event Description:</strong></h3>
+			<p style="font-size: 20px">A career in Web application development can prove every bit as rewarding and much more fun! Also it improves the job prospects of students and get an edge over the counterparts. This two days’ workshop on Web Application Development is based on a modern web technology ReactJS for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as base in development of single-page or mobile application, as it is optimal for fetching rapidly changing data that needs to be recorded. This workshop will focus on the basics of ReactJS, React Components, React Internals and the Component Inter communication. Mini project will be given to the participant at the end of this workshop to evaluate the outcome it.</p>
+	 	</div>
+	</div>
+
+	<div style="height: 10px;">
+
+		<!-- Left side panebar -->
+		<div class="sidepane-l">
+			<p>Details of the Workshop:</p>
+		
+			<p>DATE: 10 March 2020</p>
+		
+			<p >Venue: Depstar Seminar Hall</p>
+	
+			<p align="center">Schedule</p>
+			<ul class="schedule">
+				<li>8:00-9:00 Reporting</li>
+				<li>9:00-10:00 Introduction</li>
+				<li>10:10-11:00 Tutorials and Hands-ON</li>
+				<li>11:00-12:00 Break</li>
+				<li>12:00-2:00 Development on React JS</li>
+				<li>2:00-2:20 Short Break</li>
+				<li>2:20-4:00 Session Continues and quiz</li>
+				<li>4:00-4:30 Certification and Farewell</li>
+			</ul>	
+		</div>
+
+			<!--   form section -->
+
+		<div class="main">
+			<form action="assingment5_php.php" method="POST">
+				<section class="detail">
+					<label for="">Name:</label> 
+					<input type="text" name="name" placeholder="Enter your Name" required>
+					<br>
+
+					<label for="">Email: </label> 
+					<input type="Email" name="email" placeholder="email"  required="">
+					<br>
+					Phone: <input type="tel" name="phone" required="" placeholder="Your Phone number">
+					<br>
+				</section>
+
+
+				<p>Gender:</p>
+				<input type="radio" name="gender" value="male"> <label for="male">Male</label>
+				<input type="radio" name="gender" value="female"> <label for="female">Female</label>
+				<input type="radio" name="gender" value="other"> <label for="other">Other</label>
+
+			
+				<p>You are a:</p>
+				<input type="radio" name="profession" value="student"> 
+				<label for="Student">Student</label><br>
+				<input type="radio"  name="profession" value="faculty">
+				<label for="Faculty">Faculty</label><br>
+				<input type="radio" name="profession" value="professional">
+				<label for="other">Professional</label>
+				<br>
+				<input type="submit" class="button button1" name="submitbtn">Submit</button>
+			</form>
+		</div>
+
+			<!-- Right Sidepane bar -->
+
+
+		<div class="sidepane-r">
+			<p align="center">Upcoming EVENTS</p>
+			<ul>
+				<li>Workshop on Python</li>
+				<li>Getting Hands on Flutter</li>
+				<li>Google Explore ML</li>
+				<li>Introduction on BLOCKCHAIN</li>
+				<li>Deep Learning</li>
+			</ul>
+		</div>
+
+</div>
+
+		
+	<div class="foot">
+		<p align="center">© 1996-2020 National Workshop Group | Copyright and permissions | Privacy policy | Fraud alert | Disclaimer</p>
+	</div>
+	
+</body>
+
+</html>
