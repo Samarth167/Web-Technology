@@ -8,15 +8,15 @@ if(isset($_POST['submitbtn'])){
 
 $name=$email=$phone=$gender=$fprof='';
 
-$fname = $_POST['name'];
-$femail = $_POST['email'];
-$fphone = $_POST['phone'];
-$fgender = $_POST['gender'];
-$fprof = $_POST['profession'];
+$pname = $_POST['name'];
+$pemail = $_POST['email'];
+$pphone = $_POST['phone'];
+$pgender = $_POST['gender'];
 
-$sql = "INSERT INTO tbluser (name,email,phone,gender,profession) VALUES ('$fname','$femail','$fphone','$fgender','$fprof')";
+$sql = "INSERT INTO tbluser (name,email,phone,gender,profession) VALUES ('$pname','$pemail','$pphone','$pgender')";
 $result = mysqli_query($con,$sql);
 header("Refresh:0");
+
 if($result){
 		echo "<script>alert(\"Registration Successfull\");</script>";	
 }
@@ -29,107 +29,161 @@ else{
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Registraion of National Workshop on Web Technologies</title>
-	<link rel="stylesheet" href="assingment5.css">
-	<link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet"> 
+	<title>National workshop on web technology</title>
+<style type="text/css">
+body{
+background: url(web.jpg);
+background-size: cover;
+}
+.userinfo{
+		margin-top: 20px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		width: 600px;
+		height: 650px;
+		padding: 80px 40px;
+		box-sizing: border-box;
+		background: rgba(255, 255, 255, 0.4);
+}
+.userinfo input[type="text"],
+.userinfo input[type="email"],
+.userinfo input[type="tel"]
+{
+	border:none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 20px;
+	color: #fff;
+	font-size: 16px;
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 4px;
+}
+
+.userinfo input[type="button"],
+.userinfo input[type="reset"]
+{
+	border: none;
+	outline: none;
+	height: 20px;
+	width: 100px;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+	background:	black;
+	cursor: pointer;
+	border-radius: 30px;
+	margin-left: 30px;
+}
+.userinfo input[type="button"]:hover,
+.userinfo input[type="reset"]:hover
+{
+	background: indigo;
+}
+::placeholder
+{
+		width:100%; 
+		color:  white;
+		font-size: 13px;
+}
+}
+</style>
 </head>
 <body>
+<script>
+	function myfunction(){
+		var x = document.getElementById("fname");
+ 		x.value = x.value.toUpperCase();
+
+ 		var y = document.getElementById("lname");
+ 		y.value = y.value.toUpperCase();
+	}
+
+	function f1(){
 	
-	<div>
-		<div class="cover">
-			<h1 align="center">National Workshop on Web Technologies</h1>
-			<p></p>
-		</div>
+		var x = document.forms["user"]["fname"].value;
+  			if (x == "") {
+    		alert("Enter first name");
+    		return false;
+    		}
 
-		<div>
-			<h3><strong>Event Description:</strong></h3>
-			<p style="font-size: 20px">A career in Web application development can prove every bit as rewarding and much more fun! Also it improves the job prospects of students and get an edge over the counterparts. This two days’ workshop on Web Application Development is based on a modern web technology ReactJS for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as base in development of single-page or mobile application, as it is optimal for fetching rapidly changing data that needs to be recorded. This workshop will focus on the basics of ReactJS, React Components, React Internals and the Component Inter communication. Mini project will be given to the participant at the end of this workshop to evaluate the outcome it.</p>
-	 	</div>
-	</div>
+  		var y = document.forms["user"]["lname"].value;
+  			if (y == "") {
+    		alert("Enter last name");
+    		return false
+  			}
 
-	<div style="height: 10px;">
+  		var z = document.forms["user"]["email"].value;
+  			if (z == "") {
+    		alert("Enter email");
+    		return false;
+  			}
 
-		<!-- Left side panebar -->
-		<div class="sidepane-l">
-			<p>Details of the Workshop:</p>
-		
-			<p>DATE: 10 March 2020</p>
-		
-			<p >Venue: Depstar Seminar Hall</p>
+  		var ph = document.forms["user"]["phno"].value;
+  			if (ph == "") {
+    		alert("Enter phone number");
+    		return false;
+    	}
+		}
+	</script>
+<div class="userinfo">
+<table border="1" align="center">
+<tr><td colspan="2"><h1><center><font color="black">WORKSHOP REGISTRATION</font></center></h1></td></tr>
+<tr><td>
+<ul><h3><font color="maroon">
+<li>Genre</li>
+<li>Trending</li>
+<li>News</li>
+<li>Live Streams</li>
+</font></h3></ul>
+</td>
+<td><fieldset>
+<table border="0" width="340" height="400">
+<form name= "user" id = "form1">
 	
-			<p align="center">Schedule</p>
-			<ul class="schedule">
-				<li>8:00-9:00 Reporting</li>
-				<li>9:00-10:00 Introduction</li>
-				<li>10:10-11:00 Tutorials and Hands-ON</li>
-				<li>11:00-12:00 Break</li>
-				<li>12:00-2:00 Development on React JS</li>
-				<li>2:00-2:20 Short Break</li>
-				<li>2:20-4:00 Session Continues and quiz</li>
-				<li>4:00-4:30 Certification and Farewell</li>
-			</ul>	
-		</div>
+		<legend>Create an account</legend>
+	<tr><td>First name:</td> 
+        <td><input type = "text" name = "fname" id = "fname"  placeholder="  Enter your first name" onblur="myfunction()"/><br/></td></tr>        
+         
+        <tr><td>Last name: 
+        <td><input type = "text" name = "lname" id = "lname" value = "" maxlength = "100" placeholder="  Enter your last name" onblur="myfunction()"/><br/></td></tr>
 
-			<!--   form section -->
+        <tr><td>Interested lecture:
+        <td><font color="black" size = "2px"><input type="checkbox" name="dota" id = "dota" value = "">HTML<br>
+        	<input type="checkbox" name="game" id = "WoW" value = "">  CSS 3.0<br>
+        	<input type="checkbox" name="game" id = "elderscrolls" value = "">  DOM/Bootstrap<br>
+        	<input type="checkbox" name="game" id = "witcher" value = "">  JQUERY </font>
 
-		<div class="main">
-			<form action="assingment5_php.php" method="POST">
-				<section class="detail">
-					<label for="">Name:</label> 
-					<input type="text" name="name" placeholder="Enter your Name" required>
-					<br>
+    <tr><td>Identity:
+	<td><select name = "dropdown" required>
+            <option value = "Student" selected>Student</option>
+            <option value = "Faculty">Faculty</option>
+	    <option value = "Professional">Professional</option>
+            <option value = "Representative">Firm representative</option>
+        </select><br/></td></tr>
 
-					<label for="">Email: </label> 
-					<input type="Email" name="email" placeholder="email"  required="">
-					<br>
-					Phone: <input type="tel" name="phone" required="" placeholder="Your Phone number">
-					<br>
-				</section>
+	<tr><td>Gender:
+	<td><input type="radio" name="Gend" value="M" selected> Male
+	<input type="radio" name="Gend" value="F" required> Female
+	<input type="radio" name="Gend" value="OTH" required> Other<br/></td></tr>
 
 
-				<p>Gender:</p>
-				<input type="radio" name="gender" value="male"> <label for="male">Male</label>
-				<input type="radio" name="gender" value="female"> <label for="female">Female</label>
-				<input type="radio" name="gender" value="other"> <label for="other">Other</label>
+	<tr><td>Email ID:
+	<td><input type="email" name="email" id = "email" placeholder="  Enter your email"/><br/></td></tr>
 
-			
-				<p>You are a:</p>
-				<input type="radio" name="profession" value="student"> 
-				<label for="Student">Student</label><br>
-				<input type="radio"  name="profession" value="faculty">
-				<label for="Faculty">Faculty</label><br>
-				<input type="radio" name="profession" value="professional">
-				<label for="other">Professional</label>
-				<br>
-				<input type="submit" class="button button1" name="submitbtn">Submit</button>
-			</form>
-		</div>
-
-			<!-- Right Sidepane bar -->
-
-
-		<div class="sidepane-r">
-			<p align="center">Upcoming EVENTS</p>
-			<ul>
-				<li>Workshop on Python</li>
-				<li>Getting Hands on Flutter</li>
-				<li>Google Explore ML</li>
-				<li>Introduction on BLOCKCHAIN</li>
-				<li>Deep Learning</li>
-			</ul>
-		</div>
-
-</div>
-
-		
-	<div class="foot">
-		<p align="center">© 1996-2020 National Workshop Group | Copyright and permissions | Privacy policy | Fraud alert | Disclaimer</p>
-	</div>
-	
+	<tr><td>Phone No:
+	<td><input type="tel" name="phno" id = "phno" placeholder="  Enter your phone number"><br/></td></tr>
+        <tr><td><input type = "button" value ="Submit" onclick="f1()" /></td>
+	<td><input type = "reset" value ="Reset" /></tr></td>
+</table>
+</tr></td>
+</fieldset>
+</table>
+<pre id="demo"></pre>
+</script>
 </body>
-
-</html>
+</form>
