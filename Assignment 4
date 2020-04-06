@@ -28,6 +28,13 @@
     		return false;
   			}
 		} 
+
+		function myfunction(){
+		var x = document.getElementById("name");
+ 		x.value = x.value.toUpperCase();
+
+	}
+	
 	</script>
 	<title>Form</title>
 </head>
@@ -37,7 +44,7 @@
 		<table border="1px">
 			<tr>
 				<th>Name : </th>
-				<td><input type="text" name="name" placeholder="Enter your name"></td>
+				<td><input type="text" name="name" id="name" placeholder="Enter your name" onblur="myfunction()"></td>
 			</tr>
 			<tr>
 				<th>E-mail : </th>
